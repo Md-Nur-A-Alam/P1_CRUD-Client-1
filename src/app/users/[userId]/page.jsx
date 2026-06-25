@@ -114,22 +114,28 @@ const UserDetailsPage = async ({ params }) => {
 
                                 <AlertDialog.Backdrop>
                                     <AlertDialog.Container>
-                                        <AlertDialog.Dialog className="sm:max-w-[400px]">
-                                            <AlertDialog.CloseTrigger />
-                                            <AlertDialog.Header>
+                                        <AlertDialog.Dialog className="sm:max-w-[400px] bg-[#161b22] border border-[#30363d] text-white rounded-xl">
+                                            <AlertDialog.CloseTrigger className="text-red-500 hover:text-red-900" />
+
+                                            <AlertDialog.Header className="border-b border-[#30363d]/60 pb-3">
                                                 <AlertDialog.Icon status="danger" />
-                                                <AlertDialog.Heading>Delete user permanently?</AlertDialog.Heading>
+                                                <AlertDialog.Heading className="text-lg font-bold text-white">
+                                                    Delete user permanently?
+                                                </AlertDialog.Heading>
                                             </AlertDialog.Header>
-                                            <AlertDialog.Body>
+
+                                            <AlertDialog.Body className="py-4 text-slate-300 text-sm">
                                                 <p>
-                                                    This will permanently delete the account for <strong>{name}</strong> and remove all of their registry records from the database. This action cannot be undone.
+                                                    This will permanently delete the account for <strong className="text-white font-semibold">{name}</strong> and remove all of their registry records from the database. This action cannot be undone.
                                                 </p>
                                             </AlertDialog.Body>
-                                            <AlertDialog.Footer>
-                                                <Button slot="close" variant="tertiary">
+
+                                            <AlertDialog.Footer className="border-t border-[#30363d]/60 pt-3 flex items-center justify-end space-x-2">
+                                                <Button slot="close" variant="tertiary" className="text-slate-300 bg-accent hover:bg-[#30363d] px-4 py-2 rounded-lg transition-colors">
                                                     Cancel
                                                 </Button>
-                                                <Button slot="close" variant="danger" className="flex items-center space-x-2">
+                                                <Button slot="close" variant="danger" className="bg-[#ff0055] hover:bg-[#e0004c] text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2 shadow-md">
+                                                    <TrashBin className="h-4 w-4" />
                                                     <span>Delete User</span>
                                                 </Button>
                                             </AlertDialog.Footer>

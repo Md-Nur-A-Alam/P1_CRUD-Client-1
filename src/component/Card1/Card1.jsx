@@ -2,9 +2,13 @@ import React, { use } from 'react';
 import { AlertDialog, Badge, Button, Separator } from "@heroui/react";
 import { CircleInfo, PencilToSquare, TrashBin } from '@gravity-ui/icons';
 import Link from 'next/link';
+import { deleteUser } from '@/app/lib/actions';
 
 const Card1 = ({ user, index }) => {
     const { _id, name, email, role } = user;
+    const handleDelete = async(userId)=>{
+        await deleteUser(userId);
+    }
     return (
         <Badge.Anchor className="flex justify-start border rounded-2xl items-center">
             <div className="p-5 text-2xl">{index + 1}</div>
@@ -47,7 +51,7 @@ const Card1 = ({ user, index }) => {
                                         <Button slot="close" variant="tertiary" className="text-slate-300 bg-accent hover:bg-[#30363d] px-4 py-2 rounded-lg transition-colors">
                                             Cancel
                                         </Button>
-                                        <Button slot="close" variant="danger" className="bg-[#ff0055] hover:bg-[#e0004c] text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2 shadow-md">
+                                        <Button slot="close" variant="danger" className="bg-[#ff0055] hover:bg-[#e0004c] text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2 shadow-md" onClick={() => handleDelete(_id)}>
                                             <TrashBin className="h-4 w-4" />
                                             <span>Delete User</span>
                                         </Button>
