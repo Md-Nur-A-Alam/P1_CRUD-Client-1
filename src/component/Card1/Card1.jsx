@@ -1,13 +1,14 @@
+'use client';
 import React, { use } from 'react';
 import { AlertDialog, Badge, Button, Separator } from "@heroui/react";
 import { CircleInfo, PencilToSquare, TrashBin } from '@gravity-ui/icons';
 import Link from 'next/link';
-import { deleteUser } from '@/app/lib/actions';
 
-const Card1 = ({ user, index }) => {
+
+const Card1 = ({ user, index, deleteUserAction }) => {
     const { _id, name, email, role } = user;
     const handleDelete = async(userId)=>{
-        await deleteUser(userId);
+        await deleteUserAction(userId);
     }
     return (
         <Badge.Anchor className="flex justify-start border rounded-2xl items-center">
