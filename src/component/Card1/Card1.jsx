@@ -32,7 +32,7 @@ const Card1 = ({ user, index, deleteUserAction }) => {
 
                         <AlertDialog.Backdrop>
                             <AlertDialog.Container>
-                                <AlertDialog.Dialog className="sm:max-w-[400px] bg-[#161b22] border border-[#30363d] text-white rounded-xl">
+                                <AlertDialog.Dialog className="sm:max-w-100 bg-[#161b22] border border-[#30363d] text-white rounded-xl">
                                     <AlertDialog.CloseTrigger className="text-red-500 hover:text-red-900" />
 
                                     <AlertDialog.Header className="border-b border-[#30363d]/60 pb-3">
