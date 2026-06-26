@@ -3,6 +3,7 @@ import { getUserById } from '@/app/lib/data';
 import DeleteUserFunc from '@/component/DeleteUserFunc/DeleteUserFunc';
 import { TrashBin } from '@gravity-ui/icons';
 import { AlertDialog, Button } from '@heroui/react';
+import Link from 'next/link';
 import React from 'react';
 
 const UserDetailsPage = async ({ params }) => {
@@ -90,7 +91,7 @@ const UserDetailsPage = async ({ params }) => {
                         {/* Bottom Component Action Bar (Matches your blue, yellow, red dashboard controls layout) */}
                         <div className="flex items-center justify-end space-x-3 mt-8 pt-4 border-t border-[#30363d]/40">
                             {/* Go Back Button */}
-                            <a
+                            <Link
                                 href="/users"
                                 className="bg-[#0070f3] hover:bg-[#0060df] text-white p-2.5 rounded-lg transition-colors shadow-md flex items-center justify-center"
                                 title="Go Back"
@@ -98,7 +99,7 @@ const UserDetailsPage = async ({ params }) => {
                                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                                 </svg>
-                            </a>
+                            </Link>
 
                             {/* Edit Button */}
                             <button className="bg-[#f5a623] hover:bg-[#e0951b] text-white p-2.5 rounded-lg transition-colors shadow-md">
